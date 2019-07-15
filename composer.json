@@ -41,7 +41,10 @@
         "roots/wordpress": "5.2.2",
         "roots/wp-config": "1.0.0",
         "roots/wp-password-bcrypt": "1.0.0",
-        "vlucas/phpdotenv": "^3.4.0"
+        "vlucas/phpdotenv": "^3.4.0",
+        "wpackagist-plugin/8tracks-shortcode": "^1.35",
+        "wpackagist-plugin/co-authors-plus": "^3.4",
+        "wpackagist-plugin/wps-hide-login": "1.5.2.2"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.4.2",
@@ -49,7 +52,7 @@
     },
     "extra": {
         "installer-paths": {
-            "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "roots/soil"],
+            "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/wps-hide-login", "roots/soil"],
             "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
             "web/app/themes/{$name}/": ["type:wordpress-theme"]
         },

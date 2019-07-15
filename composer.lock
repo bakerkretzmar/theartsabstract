@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "64ec0ab6680f6e02ab3ba5aa6d8fec1f",
+    "content-hash": "d782a19a08b1bb8015d08a7ef4f3d723",
     "packages": [
         {
             "name": "composer/installers",
@@ -565,6 +565,60 @@
                 "environment"
             ],
             "time": "2019-06-15T22:40:20+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/8tracks-shortcode",
+            "version": "1.35",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/8tracks-shortcode/",
+                "reference": "tags/1.35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/8tracks-shortcode.1.35.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/8tracks-shortcode/"
+        },
+        {
+            "name": "wpackagist-plugin/co-authors-plus",
+            "version": "3.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/co-authors-plus/",
+                "reference": "tags/3.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/co-authors-plus.3.4.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/co-authors-plus/"
+        },
+        {
+            "name": "wpackagist-plugin/wps-hide-login",
+            "version": "1.5.2.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wps-hide-login/",
+                "reference": "tags/1.5.2.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wps-hide-login.1.5.2.2.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wps-hide-login/"
         }
     ],
     "packages-dev": [
