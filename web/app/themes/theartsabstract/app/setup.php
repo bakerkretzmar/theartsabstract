@@ -11,8 +11,10 @@ use Roots\Sage\Template\BladeProvider;
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
+    wp_enqueue_style('sage/app.css', asset_path('css/app.css'), false, null);
+    wp_enqueue_script('sage/manifest.js', asset_path('js/manifest.js'), null, null, true);
+    wp_enqueue_script('sage/vendor.js', asset_path('js/vendor.js'), null, null, true);
+    wp_enqueue_script('sage/app.js', asset_path('js/app.js'), null, null, true);
 
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -69,7 +71,7 @@ add_action('after_setup_theme', function () {
      * Use main stylesheet for visual editor
      * @see resources/assets/styles/layouts/_tinymce.scss
      */
-    add_editor_style(asset_path('styles/main.css'));
+    add_editor_style(asset_path('css/editor.css'));
 }, 20);
 
 /**
