@@ -10,4 +10,5 @@ mix.setPublicPath('dist')
         require('tailwindcss'),
         require('postcss-nesting'),
     ])
+    .copy('resources/css/admin.css', 'dist/css')
     .version()
