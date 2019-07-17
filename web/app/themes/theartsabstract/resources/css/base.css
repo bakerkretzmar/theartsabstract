@@ -1,3 +1,7 @@
+:root {
+    @apply .font-sans .text-lg;
+}
+
 h1, h2, h3, h4, h5, h6 {
     @apply .leading-tight .mb-2;
 }
@@ -6,10 +10,17 @@ p {
     @apply .leading-normal .mb-3;
 }
 
-a {
+.content a {
     @apply .text-green-600 .no-underline .border-b-2 .border-transparent;
     transition: 200ms ease;
     &:hover {
         @apply .border-green-600;
+    }
+}
+
+header nav .menu-item {
+    @apply .text-white;
+    &:hover {
+        @apply .text-green-600;
     }
 }
