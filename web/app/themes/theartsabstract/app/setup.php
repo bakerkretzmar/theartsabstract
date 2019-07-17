@@ -13,10 +13,10 @@ use function \Sober\Intervention\intervention;
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('sage/app.css', asset_path('css/app.css'), false, null);
-    wp_enqueue_script('sage/manifest.js', asset_path('js/manifest.js'), null, null, true);
-    wp_enqueue_script('sage/vendor.js', asset_path('js/vendor.js'), null, null, true);
-    wp_enqueue_script('sage/app.js', asset_path('js/app.js'), null, null, true);
+    wp_enqueue_style('theartsabstract/app.css', asset_path('css/app.css'), false, null);
+    wp_enqueue_script('theartsabstract/manifest.js', asset_path('js/manifest.js'), null, null, true);
+    wp_enqueue_script('theartsabstract/vendor.js', asset_path('js/vendor.js'), null, null, true);
+    wp_enqueue_script('theartsabstract/app.js', asset_path('js/app.js'), null, null, true);
 
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -32,10 +32,10 @@ add_action('after_setup_theme', function () {
      * @link https://roots.io/plugins/soil/
      */
     add_theme_support('soil-clean-up');
-    add_theme_support('soil-jquery-cdn');
+    add_theme_support('soil-disable-rest-api');
     add_theme_support('soil-nav-walker');
     add_theme_support('soil-nice-search');
-    add_theme_support('soil-relative-urls');
+    // add_theme_support('soil-google-analytics', 'UA-XXXXX-Y');
 
     /**
      * Enable plugins to manage the document title
@@ -117,10 +117,6 @@ add_action('widgets_init', function () {
     register_sidebar([
         'name'          => __('Primary', 'theartsabstract'),
         'id'            => 'sidebar-primary'
-    ] + $config);
-    register_sidebar([
-        'name'          => __('Footer', 'theartsabstract'),
-        'id'            => 'sidebar-footer'
     ] + $config);
 });
 
