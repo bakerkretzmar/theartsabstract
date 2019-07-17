@@ -90,3 +90,27 @@ Container::getInstance()
             'view' => require dirname(__DIR__).'/config/view.php',
         ]);
     }, true);
+
+
+
+/**
+ * Add featured image thumbnail to post columns in admin.
+ */
+function add_thumbnail_column($columns) {
+    return array_merge(
+        array_slice($columns, 0, 1, true),
+        ['thumbnail' => 'Thumbnail'],
+        array_slice($columns, 1, count($columns) - 1, true)
+    );
+}
+
+function thumbnail_column($column, $id) {
+    if ($column === 'thumbnail') {
+        echo the_post_thumbnail('thumbnail');
+    }
+}
+
+add_filter('manage_posts_columns', 'add_thumbnail_column');
+add_action('manage_posts_custom_column', 'thumbnail_column', 10, 2);
+add_filter('manage_pages_columns', 'add_thumbnail_column');
+add_action('manage_pages_custom_column', 'thumbnail_column', 10, 2);
