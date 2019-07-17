@@ -7,6 +7,8 @@ use Roots\Sage\Assets\JsonManifest;
 use Roots\Sage\Template\Blade;
 use Roots\Sage\Template\BladeProvider;
 
+use function \Sober\Intervention\intervention;
+
 /**
  * Theme assets
  */
@@ -72,6 +74,34 @@ add_action('after_setup_theme', function () {
      * @see resources/assets/styles/layouts/_tinymce.scss
      */
     add_editor_style(asset_path('css/editor.css'));
+
+    /**
+     * Clean up dashboard using `soberwp/intervention`
+     */
+    if (function_exists('\Sober\Intervention\intervention')) {
+        intervention('remove-customizer-items');
+        // intervention('remove-dashboard-items');
+        intervention('remove-emoji');
+        intervention('remove-help-tabs');
+        intervention('remove-howdy');
+        intervention('remove-menu-items', [
+            'updates', 'themes', 'theme-widgets', 'theme-menu', 'theme-editor', 'plugins', 'plugin-new', 'plugin-editor', 'user-new', 'tools', 'tool-import', 'tool-export', 'settings', 'setting-writing', 'setting-reading', 'setting-media', 'setting-permalink', 'setting-discussion', 'setting-disable-comments',
+        ]);
+        intervention('remove-page-components', ['comments']);
+        intervention('remove-post-components', ['comments']);
+        intervention('remove-toolbar-frontend');
+        intervention('remove-toolbar-items', ['comments', 'new']);
+        intervention('remove-update-notices');
+        intervention('remove-user-fields', [
+            'options', 'option-title', 'option-editor', 'option-schemes', 'option-shortcuts', 'option-toolbar', 'name-nickname', 'contact-web', 'about', 'about-bio', 'about-profile',
+        ]);
+        intervention('remove-user-roles');
+        intervention('remove-widgets', [
+            'calendar', 'rss', 'recent-comments', 'tag-cloud', 'custom-html', 'custom-menu'
+        ]);
+        intervention('update-dashboard-columns', 2);
+        intervention('update-label-footer', '<span id="footer-thankyou">Thank you for fucking with <a href="https://en-ca.wordpress.org/">WordPress</a>.</span>');
+    }
 }, 20);
 
 /**
