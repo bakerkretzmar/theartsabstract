@@ -2,7 +2,7 @@
   Template Name: Custom Template
 --}}
 
-@extends('layouts.app')
+@extends('app')
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
