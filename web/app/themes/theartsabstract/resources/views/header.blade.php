@@ -1,6 +1,6 @@
 <header class="flex items-center justify-between w-full bg-black px-4 py-1">
 
-    <a class="text-2xl text-white hover:text-red-600 font-bold uppercase tracking-wide mt-px" href="{{ home_url('/') }}">
+    <a class="text-2xl text-white hover:text-red-600 font-bold uppercase tracking-wider mt-px" href="{{ home_url('/') }}">
         {{ get_bloginfo('name', 'display') }}
     </a>
 

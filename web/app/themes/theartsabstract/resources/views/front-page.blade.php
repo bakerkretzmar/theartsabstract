@@ -9,25 +9,41 @@
 
         @include('header')
 
-        <div class="wrap container" role="document">
+        <div class="wrap" role="document">
 
             <div class="content">
 
-                <main class="main">
+                <main class="front-page-grid">
 
-                        @while(have_posts())
+                    @while(have_posts())
 
-                            @php the_post() @endphp
+                        {{ the_post() }}
 
-                            {{ FrontPage::post_title() }}
+                        <div class="ar-golden">
 
-                            {{ FrontPage::post_subtitle() }}
+                            <div class="ar front-page-grid-item relative overflow-hidden">
 
-                            {{ FrontPage::post_thumbnail() }}
+                                {{ FrontPage::post_thumbnail([
+                                    'class' => 'w-full h-full object-cover object-center',
+                                ]) }}
 
-                            {{-- @php the_title() @endphp --}}
+                                <div class="absolute inset-0 bg-white opacity-25"></div>
 
-                        @endwhile
+                                <div class="absolute inset-0 flex flex-col">
+
+                                    <h2 class="font-bold">
+                                        {{ FrontPage::post_title() }}
+                                    </h2>
+
+                                    {{ FrontPage::post_subtitle() }}
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    @endwhile
 
                 </main>
 

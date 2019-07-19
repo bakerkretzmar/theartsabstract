@@ -16,8 +16,8 @@ class FrontPage extends Controller
         return get_post_meta(get_post()->ID, 'subtitle', true);
     }
 
-    public static function post_thumbnail()
+    public static function post_thumbnail(array $attributes = [])
     {
-        return the_post_thumbnail('full');
+        return the_post_thumbnail('full', $attributes);
     }
 }
