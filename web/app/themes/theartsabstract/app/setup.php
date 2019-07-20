@@ -14,6 +14,7 @@ use function \Sober\Intervention\intervention;
  */
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('theartsabstract/app.css', asset_path('css/app.css'), false, null);
+
     wp_enqueue_script('theartsabstract/manifest.js', asset_path('js/manifest.js'), null, null, true);
     wp_enqueue_script('theartsabstract/vendor.js', asset_path('js/vendor.js'), null, null, true);
     wp_enqueue_script('theartsabstract/app.js', asset_path('js/app.js'), null, null, true);
@@ -32,7 +33,6 @@ add_action('after_setup_theme', function () {
      * @link https://roots.io/plugins/soil/
      */
     add_theme_support('soil-clean-up');
-    add_theme_support('soil-disable-rest-api');
     add_theme_support('soil-nav-walker');
     add_theme_support('soil-nice-search');
     // add_theme_support('soil-google-analytics', 'UA-XXXXX-Y');
@@ -70,12 +70,6 @@ add_action('after_setup_theme', function () {
     add_theme_support('customize-selective-refresh-widgets');
 
     /**
-     * Use main stylesheet for visual editor
-     * @see resources/assets/styles/layouts/_tinymce.scss
-     */
-    add_editor_style(asset_path('css/editor.css'));
-
-    /**
      * Clean up dashboard using `soberwp/intervention`
      */
     if (function_exists('\Sober\Intervention\intervention')) {
@@ -103,6 +97,10 @@ add_action('after_setup_theme', function () {
         intervention('update-label-footer', '<span id="footer-thankyou">Thank you for fucking with <a href="https://en-ca.wordpress.org/">WordPress</a>.</span>');
     }
 }, 20);
+
+add_action('enqueue_block_editor_assets', function () {
+    wp_enqueue_style('theartsabstract/editor.css', asset_path('css/editor.css'), false, null);
+});
 
 /**
  * Register sidebars

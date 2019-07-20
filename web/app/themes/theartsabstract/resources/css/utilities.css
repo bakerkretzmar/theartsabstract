@@ -1,5 +1,5 @@
 @responsive {
-    .ar-2\/5 {
+    /* .ar-2\/5 {
         @apply .relative;
         padding-top: 40%;
     }
@@ -14,12 +14,28 @@
     .ar-2\/3 {
         @apply .relative;
         padding-top: 66.6667%;
-    }
-    .ar-golden {
+    } */
+    .aspect-ratio-golden {
         @apply .relative;
         padding-top: 61.8%;
     }
-    .ar {
+    .aspect-ratio {
         @apply .absolute .top-0 .w-full .h-full;
     }
+}
+
+.link {
+    @apply .text-red-600 .no-underline .border-b-2 .border-transparent;
+    transition: all 200ms ease;
+    &:hover {
+        @apply .border-red-600;
+    }
+}
+
+.transition-200 {
+    transition: all 200ms ease;
+}
+
+.h-fill {
+    height: calc(100vh - 50.5px);
 }

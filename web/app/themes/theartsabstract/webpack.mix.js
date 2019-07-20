@@ -11,5 +11,6 @@ mix.setPublicPath('dist')
         require('postcss-nesting'),
     ])
     .copy('resources/css/admin.css', 'dist/css')
+    .copy('resources/css/editor.css', 'dist/css')
     .copyDirectory('resources/img', 'dist/img')
     .version()

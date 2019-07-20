@@ -3,9 +3,8 @@
 @import 'tailwindcss/components';
 
 @import 'base';
+@import 'utilities';
 @import 'components';
 @import 'wp';
 
 @import 'tailwindcss/utilities';
-
-@import 'utilities';

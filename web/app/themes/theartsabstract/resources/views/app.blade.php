@@ -3,33 +3,27 @@
 
     @include('partials.head')
 
-    <body @php body_class() @endphp>
+    <body {{ body_class(['flex', 'flex-col', 'min-h-screen']) }}>
 
-        @php do_action('get_header') @endphp
+        {{ do_action('get_header') }}
 
-        @include('partials.header')
+        @include('header')
 
-        <div class="wrap container" role="document">
+        <main class="flex-grow">
 
-            <div class="content">
+            @yield('content')
 
-                <main class="main">
-                    @yield('content')
-                </main>
+        </main>
 
-                @if (App\display_sidebar())
-                    <aside class="sidebar">
-                        @include('partials.sidebar')
-                    </aside>
-                @endif
-
-            </div>
-
-        </div>
+        @if (App\display_sidebar())
+            <aside class="sidebar">
+                @include('partials.sidebar')
+            </aside>
+        @endif
 
         @php do_action('get_footer') @endphp
 
-        @include('partials.footer')
+        @include('footer')
 
         @php wp_footer() @endphp
 

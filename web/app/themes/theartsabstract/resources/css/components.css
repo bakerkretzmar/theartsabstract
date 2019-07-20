@@ -3,7 +3,17 @@
     transition: 200ms ease;
 }
 
+a.author {
+    @apply .link;
+}
 
+.categories-tags > a {
+    @apply .link;
+}
+
+.pagination-links a {
+    @apply .link;
+}
 
 
 
