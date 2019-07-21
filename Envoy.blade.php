@@ -8,6 +8,8 @@
         'production' => '/home/forge/theartsabstract.ca',
     ][$stage];
 
+    $theme = $base . '/web/app/themes/theartsabstract';
+
     function output($before, $message, $colour) {
         $c = ['green' => '32', 'magenta' => '35', 'cyan' => '36'][$colour];
         return "echo '" . $before . " \033[" . $c . "m" . $message . "\033[0m';";
@@ -18,6 +20,7 @@
     start
     git
     composer
+    assets
     fpm
     finish
 @endstory
@@ -36,6 +39,13 @@
     {{ output('↪︎', 'Installing dependencies...', 'green') }}
     cd {{ $base }}
     composer install -n -q -o --prefer-dist {{ $stage === 'production' ? '--no-dev' : '' }}
+@endtask
+
+@task('assets', ['on' => $stage])
+    {{ output('↪︎', 'Building assets...', 'green') }}
+    cd {{ $theme }}
+    rm -rf ./dist
+    npm run production
 @endtask
 
 @task('fpm', ['on' => $stage])
