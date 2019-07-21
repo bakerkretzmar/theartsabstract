@@ -45,7 +45,7 @@
     {{ output('↪︎', 'Building assets...', 'green') }}
     cd {{ $theme }}
     rm -rf ./dist
-    npm run prod
+    npm install && npm run prod
 @endtask
 
 @task('fpm', ['on' => $stage])
