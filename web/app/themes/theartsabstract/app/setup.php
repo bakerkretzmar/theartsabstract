@@ -89,7 +89,7 @@ add_action('after_setup_theme', function () {
         intervention('remove-user-fields', [
             'options', 'option-title', 'option-editor', 'option-schemes', 'option-shortcuts', 'option-toolbar', 'name-nickname', 'contact-web', 'about', 'about-bio', 'about-profile',
         ]);
-        intervention('remove-user-roles');
+        intervention('remove-user-roles', ['subscriber', 'author']);
         intervention('remove-widgets', [
             'calendar', 'rss', 'recent-comments', 'tag-cloud', 'custom-html', 'custom-menu'
         ]);
