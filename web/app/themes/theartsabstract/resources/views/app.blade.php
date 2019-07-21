@@ -7,7 +7,7 @@
 
         {{ do_action('get_header') }}
 
-        @include('header')
+        @include('partials.header')
 
         <main class="flex-grow">
 
@@ -15,17 +15,11 @@
 
         </main>
 
-        @if (App\display_sidebar())
-            <aside class="sidebar">
-                @include('partials.sidebar')
-            </aside>
-        @endif
+        {{ do_action('get_footer') }}
 
-        @php do_action('get_footer') @endphp
+        @include('partials.footer')
 
-        @include('footer')
-
-        @php wp_footer() @endphp
+        {{ wp_footer() }}
 
     </body>
 

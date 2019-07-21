@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Vollkorn:400,400i,700,700i&display=swap');
 
-body {
-    font-family: "Vollkorn";
-}
-
 h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat",
     line-height: 1.25;

@@ -32,6 +32,10 @@ module.exports = {
                 '96': '24rem',
             },
 
+            lineHeight: {
+                tighter: '1.125',
+            },
+
             fontFamily: {
                 sans: [
                     '"Montserrat"',

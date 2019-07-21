@@ -6,9 +6,9 @@ use Sober\Controller\Controller;
 
 class App extends Controller
 {
-    public function siteName()
+    public function post_thumbnail_caption()
     {
-        return get_bloginfo('name');
+        return get_post(get_post_thumbnail_id())->post_excerpt ?? null;
     }
 
     public static function title()

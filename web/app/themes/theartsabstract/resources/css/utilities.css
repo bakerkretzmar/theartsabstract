@@ -1,20 +1,8 @@
 @responsive {
-    /* .ar-2\/5 {
-        @apply .relative;
-        padding-top: 40%;
-    }
-    .ar-1\/2 {
-        @apply .relative;
-        padding-top: 50%;
-    }
-    .ar-16\/9 {
+    .aspect-ratio-16\/9 {
         @apply .relative;
         padding-top: 56.25%;
     }
-    .ar-2\/3 {
-        @apply .relative;
-        padding-top: 66.6667%;
-    } */
     .aspect-ratio-golden {
         @apply .relative;
         padding-top: 61.8%;
@@ -37,5 +25,5 @@
 }
 
 .h-fill {
-    height: calc(100vh - 50.5px);
+    height: calc(100vh - 45px);
 }

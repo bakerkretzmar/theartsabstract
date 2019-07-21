@@ -3,7 +3,7 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-    @apply .leading-tight .mb-2;
+    @apply .leading-tight;
 }
 
 .content {
@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
         quotes: '“', '”';
         &::before {
             font-size: 500px;
-            content: open-quote;
+            content: '“';
             @apply .block .absolute .text-grey-300;
             top: -110px;
             left: -230px;
@@ -52,6 +52,11 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+a.author,
+.categories-tags > a,
+.pagination-links a {
+    @apply .link;
+}
 
 header nav .menu-item {
     @apply .text-white;
@@ -60,15 +65,7 @@ header nav .menu-item {
     }
 }
 
-.front-page-grid {
+.posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
 }
-
-/*
-.front-page-grid-item:first-child {
-    grid-column: 1 / -1;
-    padding-top: 40vh;
-
-}
- */

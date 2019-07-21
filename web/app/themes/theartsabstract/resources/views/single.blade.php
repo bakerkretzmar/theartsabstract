@@ -6,7 +6,7 @@
 
         {{ the_post() }}
 
-        @include('content-single-'.get_post_type())
+        @include('partials.content-single-'.get_post_type())
 
     @endwhile
 

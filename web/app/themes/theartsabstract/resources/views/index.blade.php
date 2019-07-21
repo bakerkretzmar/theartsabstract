@@ -1,18 +1,25 @@
 @extends('app')
 
 @section('content')
-  @include('partials.page-header')
 
-  @if (!have_posts())
-    <div class="alert alert-warning">
-      {{ __('Sorry, no results were found.', 'theartsabstract') }}
-    </div>
-    {!! get_search_form(false) !!}
-  @endif
+    @include('partials.page-header')
 
-  @while (have_posts()) @php the_post() @endphp
-    @include('partials.content-'.get_post_type())
-  @endwhile
+    @if(! have_posts())
 
-  {!! get_the_posts_navigation() !!}
+        <p class="text-2xl my-12 mx-auto text-center">
+            {{ __('Search harder!', 'theartsabstract') }}
+        </p>
+
+        @include('partials.searchform')
+
+    @endif
+
+    @while(have_posts())
+
+        {{ the_post() }}
+
+        @include('partials.content-'.get_post_type())
+
+    @endwhile
+
 @endsection

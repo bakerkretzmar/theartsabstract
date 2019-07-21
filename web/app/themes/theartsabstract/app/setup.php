@@ -98,9 +98,9 @@ add_action('after_setup_theme', function () {
     }
 }, 20);
 
-add_action('enqueue_block_editor_assets', function () {
-    wp_enqueue_style('theartsabstract/editor.css', asset_path('css/editor.css'), false, null);
-});
+// add_action('enqueue_block_editor_assets', function () {
+//     wp_enqueue_style('theartsabstract/editor.css', asset_path('css/editor.css'), false, null);
+// });
 
 /**
  * Register sidebars
