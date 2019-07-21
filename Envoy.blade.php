@@ -39,13 +39,16 @@
     {{ output('↪︎', 'Installing dependencies...', 'green') }}
     cd {{ $base }}
     composer install -n -q -o --prefer-dist {{ $stage === 'production' ? '--no-dev' : '' }}
+    cd {{ $theme }}
+    composer install -n -q -o --prefer-dist {{ $stage === 'production' ? '--no-dev' : '' }}
 @endtask
 
 @task('assets', ['on' => $stage])
     {{ output('↪︎', 'Building assets...', 'green') }}
     cd {{ $theme }}
     rm -rf ./dist
-    npm install && npm run prod
+    yarn &> /dev/null
+    yarn prod &> /dev/null
 @endtask
 
 @task('fpm', ['on' => $stage])
