@@ -2,8 +2,8 @@
 
 @import 'tailwindcss/components';
 
-@import 'base';
 @import 'utilities';
+@import 'base';
 @import 'wp';
 
 @import 'tailwindcss/utilities';
