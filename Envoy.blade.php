@@ -2,11 +2,9 @@
 
 @setup
     $repository = 'git@github.com:bakerkretzmar/theartsabstract.git';
-    $branch = ['production' => 'master'][$stage];
+    $branch = 'master';
 
-    $base = [
-        'production' => '/home/forge/theartsabstract.ca',
-    ][$stage];
+    $base = '/home/forge/theartsabstract.ca';
 
     $theme = $base . '/web/app/themes/theartsabstract';
 
@@ -25,25 +23,25 @@
     finish
 @endstory
 
-@task('start', ['on' => $stage])
-    {{ output('🛫', "Deploying branch $branch to $stage...", 'cyan') }}
+@task('start', ['on' => 'production'])
+    {{ output('🛫', "Deploying branch $branch to production...", 'cyan') }}
 @endtask
 
-@task('git', ['on' => $stage])
+@task('git', ['on' => 'production'])
     {{ output('↪︎', 'Updating repository...', 'green') }}
     cd {{ $base }}
     git pull
 @endtask
 
-@task('composer', ['on' => $stage])
+@task('composer', ['on' => 'production'])
     {{ output('↪︎', 'Installing dependencies...', 'green') }}
     cd {{ $base }}
-    composer install -n -q -o --prefer-dist {{ $stage === 'production' ? '--no-dev' : '' }}
+    composer install -n -q -o --prefer-dist --no-dev
     cd {{ $theme }}
-    composer install -n -q -o --prefer-dist {{ $stage === 'production' ? '--no-dev' : '' }}
+    composer install -n -q -o --prefer-dist --no-dev
 @endtask
 
-@task('assets', ['on' => $stage])
+@task('assets', ['on' => 'production'])
     {{ output('↪︎', 'Building assets...', 'green') }}
     cd {{ $theme }}
     rm -rf ./dist
@@ -51,7 +49,7 @@
     yarn prod &> /dev/null
 @endtask
 
-@task('fpm', ['on' => $stage])
+@task('fpm', ['on' => 'production'])
     {{ output('↪︎', 'Reloading php-fpm...', 'green') }}
     sudo service php7.3-fpm reload
 @endtask
