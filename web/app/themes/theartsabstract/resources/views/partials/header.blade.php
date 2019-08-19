@@ -4,7 +4,7 @@
         {{ get_bloginfo('name') }}
     </a>
 
-    <nav class="flex items-center oh-3 hidden md:block">
+    <nav class="hidden md:flex items-center oh-3">
 
         @if(has_nav_menu('primary_navigation'))
             {!! wp_nav_menu([
