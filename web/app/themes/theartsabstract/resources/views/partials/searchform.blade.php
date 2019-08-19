@@ -1,4 +1,4 @@
-<form role="search" method="get" class="flex items-center justify-center w-full max-w-3xl mx-auto oh-4" action="https://theartsabstract.test/">
+<form role="search" method="get" class="flex items-center justify-center w-full max-w-3xl mx-auto oh-4" action="/">
 
     <span class="sr-only">Search for:</span>
 
