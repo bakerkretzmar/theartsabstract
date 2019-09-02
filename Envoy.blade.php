@@ -44,7 +44,7 @@
 @task('assets', ['on' => 'production'])
     {{ output('↪︎', 'Building assets...', 'green') }}
     cd {{ $theme }}
-    rm -rf ./dist
+    trash ./dist
     yarn &> /dev/null
     yarn prod &> /dev/null
 @endtask
@@ -56,5 +56,5 @@
 
 @task('finish', ['on' => 'local'])
     {{ output('🚀', 'Deploy successful!', 'magenta') }}
-    afplay /System/Library/Sounds/Submarine.aiff -v 35
+    afplay /System/Library/Sounds/Submarine.aiff
 @endtask
