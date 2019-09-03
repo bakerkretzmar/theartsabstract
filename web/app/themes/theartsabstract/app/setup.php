@@ -16,7 +16,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('theartsabstract/app.css', asset_path('css/app.css'), false, null);
 
     wp_enqueue_script('theartsabstract/manifest.js', asset_path('js/manifest.js'), null, null, true);
-    wp_enqueue_script('theartsabstract/vendor.js', asset_path('js/vendor.js'), null, null, true);
+    // wp_enqueue_script('theartsabstract/vendor.js', asset_path('js/vendor.js'), null, null, true);
     wp_enqueue_script('theartsabstract/app.js', asset_path('js/app.js'), null, null, true);
 
     if (is_single() && comments_open() && get_option('thread_comments')) {
