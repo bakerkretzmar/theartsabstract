@@ -26,20 +26,43 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     & blockquote {
-        @apply .relative .ml-20 .-mr-20 .py-12;
+        @apply .relative .py-2 .mx-4;
+        @screen md {
+            @apply .ml-32 .py-6;
+        }
+        @screen lg {
+            @apply .ml-20 .-mr-20 .py-12;
+        }
         quotes: '“', '”';
         &::before {
-            font-size: 500px;
             content: '“';
-            @apply .block .absolute .text-grey-300;
-            top: -110px;
-            left: -230px;
+            @apply .hidden .absolute .text-grey-300;
+            @screen md {
+                @apply .block;
+                font-size: 300px;
+                top: -70px;
+                left: -130px;
+            }
+            @screen lg {
+                font-size: 500px;
+                top: -110px;
+                left: -230px;
+            }
         }
         & p {
-            @apply .text-4xl .leading-relaxed .italic .mb-6;
+            @apply .text-2xl .leading-relaxed .italic .mb-2;
+            @screen md {
+                @apply .text-3xl .mb-4;
+            }
+            @screen lg {
+                @apply .text-4xl .mb-6;
+            }
         }
         & cite {
-            @apply .text-2xl .text-grey-700 .not-italic;
+            @apply .text-xl .text-grey-700 .not-italic;
+            @screen lg {
+                @apply .text-2xl;
+            }
         }
     }
 
@@ -69,7 +92,14 @@ header nav .menu-item {
     }
 }
 
+input#mobile-menu-toggle:checked ~ div#mobile-menu {
+    @apply .flex;
+}
+
 .posts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    @screen md {
+        grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+    }
 }

@@ -1,4 +1,4 @@
-<footer class="flex items-center justify-between w-full bg-black px-4 py-2">
+<footer class="flex flex-col sm:flex-row items-center justify-between w-full bg-black px-4 py-2">
 
     <p class="text-white text-sm">
         © {{ date('Y') }} {{ get_bloginfo('name', 'display') }}

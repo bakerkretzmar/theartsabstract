@@ -32,14 +32,14 @@
 
     <p class="text-3xl text-center">~</p>
 
-    <footer class="pagination-links container max-w-3xl flex justify-between my-8">
+    <footer class="pagination-links container max-w-3xl flex flex-col sm:flex-row justify-between my-8 o-6 sm:o-0">
 
-        <p class="flex items-center w-1/2 pr-2 oh-4">
+        <p class="flex items-center sm:w-1/2 pr-2 oh-4">
             <span>←</span>
             <span>{{ previous_post_link('%link') }}</span>
         </p>
 
-        <p class="flex items-center justify-end w-1/2 pl-2 oh-4 text-right">
+        <p class="flex items-center self-end justify-end sm:w-1/2 pl-2 oh-4 text-right">
             <span>{{ next_post_link('%link') }}</span>
             <span>→</span>
         </p>
