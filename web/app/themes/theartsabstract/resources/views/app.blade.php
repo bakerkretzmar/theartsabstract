@@ -19,6 +19,10 @@
 
         @include('partials.footer')
 
+        @if(env('WP_ENV') === 'production')
+            @include('partials.analytics')
+        @endif
+
         {{ wp_footer() }}
 
     </body>
