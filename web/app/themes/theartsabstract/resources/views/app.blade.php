@@ -19,11 +19,9 @@
 
         @include('partials.footer')
 
-        @if(env('WP_ENV') === 'production')
-            @include('partials.analytics')
-        @endif
-
         {{ wp_footer() }}
+
+        <script defer src="https://cdn.usefathom.com/script.js" site="CBGVYXOH" included-domains="theartsabstract.ca"></script>
 
     </body>
 
