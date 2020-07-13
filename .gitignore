@@ -1,8 +1,7 @@
 /vendor
-/web/app/languages
+/web/app/mu-plugins/*/
 /web/app/upgrade
 /web/wp
+*.log
 .env
-.env.*
-!.env.example
 wp-cli.local.yml

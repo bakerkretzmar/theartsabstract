@@ -1,34 +1,37 @@
 {
     "name": "bakerkretzmar/theartsabstract",
     "type": "project",
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
     "repositories": [
         {
             "type": "composer",
-            "url": "https://wpackagist.org"
+            "url": "https://wpackagist.org",
+            "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
         }
     ],
     "require": {
-        "php": ">=7.1",
-        "composer/installers": "^1.4",
-        "oscarotero/env": "^1.2.0",
+        "php": ">=7.3",
+        "composer/installers": "^1.8",
+        "laravel/envoy": "^2.2",
+        "oscarotero/env": "^2.0",
         "roots/soil": "^3.8",
-        "roots/wordpress": "5.2.2",
+        "roots/bedrock-autoloader": "^1.0",
+        "roots/wordpress": "5.4.1",
         "roots/wp-config": "1.0.0",
         "roots/wp-password-bcrypt": "1.0.0",
-        "vlucas/phpdotenv": "^3.4.0",
+        "vlucas/phpdotenv": "^4.1.5",
         "wpackagist-plugin/8tracks-shortcode": "^1.35",
         "wpackagist-plugin/advanced-custom-fields": "^5.8",
         "wpackagist-plugin/co-authors-plus": "^3.4",
         "wpackagist-plugin/wps-hide-login": "1.5.2.2"
     },
-    "require-dev": {
-        "squizlabs/php_codesniffer": "^3.4.2",
-        "roave/security-advisories": "dev-master"
+    "scripts": {},
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "extra": {
         "installer-paths": {
             "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/advanced-custom-fields", "wpackagist-plugin/redis-cache", "wpackagist-plugin/wps-hide-login", "roots/soil"],
@@ -36,6 +39,5 @@
             "web/app/themes/{$name}/": ["type:wordpress-theme"]
         },
         "wordpress-install-dir": "web/wp"
-    },
-    "scripts": {}
+    }
 }

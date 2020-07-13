@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Your base production configuration goes in this file. Environment-specific
  * overrides go in their respective config/environments/{{WP_ENV}}.php file.
@@ -9,26 +10,30 @@
  */
 
 use Roots\WPConfig\Config;
-
-/** @var string Directory containing all of the site's files */
-$root_dir = dirname(__DIR__);
-
-/** @var string Document Root */
-$webroot_dir = $root_dir . '/web';
+use function Env\env;
 
 /**
- * Expose global env() function from oscarotero/env
+ * Directory containing all of the site's files
+ *
+ * @var string
  */
-Env::init();
+$root_dir = dirname(__DIR__);
+
+/**
+ * Document Root
+ *
+ * @var string
+ */
+$webroot_dir = $root_dir . '/web';
 
 /**
  * Use Dotenv to set required environment variables and load .env file in root
  */
-$dotenv = Dotenv\Dotenv::create($root_dir);
+$dotenv = Dotenv\Dotenv::createImmutable($root_dir);
 if (file_exists($root_dir . '/.env')) {
     $dotenv->load();
     $dotenv->required(['WP_HOME', 'WP_SITEURL']);
-    if (!env('DATABASE_URL')) {
+    if (! env('DATABASE_URL')) {
         $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD']);
     }
 }
@@ -98,8 +103,9 @@ Config::define('DISALLOW_FILE_MODS', true);
  * Debugging Settings
  */
 Config::define('WP_DEBUG_DISPLAY', false);
+Config::define('WP_DEBUG_LOG', env('WP_DEBUG_LOG') ?? false);
 Config::define('SCRIPT_DEBUG', false);
-ini_set('display_errors', 0);
+ini_set('display_errors', '0');
 
 /**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
@@ -120,6 +126,6 @@ Config::apply();
 /**
  * Bootstrap WordPress
  */
-if (!defined('ABSPATH')) {
+if (! defined('ABSPATH')) {
     define('ABSPATH', $webroot_dir . '/wp/');
 }
