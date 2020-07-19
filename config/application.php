@@ -102,7 +102,8 @@ Config::define('DISALLOW_FILE_MODS', true);
 /**
  * Debugging Settings
  */
-Config::define('WP_DEBUG_DISPLAY', false);
+Config::define('WP_DEBUG', env('WP_DEBUG') ?? false);
+Config::define('WP_DEBUG_DISPLAY', env('WP_DEBUG_DISPLAY') ?? false);
 Config::define('WP_DEBUG_LOG', env('WP_DEBUG_LOG') ?? false);
 Config::define('SCRIPT_DEBUG', false);
 ini_set('display_errors', '0');

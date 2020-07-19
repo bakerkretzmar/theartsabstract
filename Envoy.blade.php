@@ -5,7 +5,6 @@
     $branch = 'master';
 
     $base = '/home/forge/theartsabstract.ca';
-
     $theme = $base . '/web/app/themes/theartsabstract';
 
     function output($before, $message, $colour) {
@@ -17,14 +16,15 @@
 @story('deploy')
     start
     git
-    composer
+    composer-wp
+    composer-theme
     assets
     fpm
     finish
 @endstory
 
 @task('start', ['on' => 'production'])
-    {{ output('🛫', "Deploying branch $branch to production...", 'cyan') }}
+    {{ output('🛫', "Deploying '$branch' branch to production...", 'cyan') }}
 @endtask
 
 @task('git', ['on' => 'production'])
@@ -33,16 +33,20 @@
     git pull
 @endtask
 
-@task('composer', ['on' => 'production'])
-    {{ output('↪︎', 'Installing dependencies...', 'green') }}
+@task('composer-wp', ['on' => 'production'])
+    {{ output('↪︎', 'Installing Bedrock/WordPress dependencies...', 'green') }}
     cd {{ $base }}
     composer install -n -q -o --prefer-dist --no-dev
+@endtask
+
+@task('composer-theme', ['on' => 'production'])
+    {{ output('↪︎', 'Installing theme dependencies...', 'green') }}
     cd {{ $theme }}
     composer install -n -q -o --prefer-dist --no-dev
 @endtask
 
 @task('assets', ['on' => 'production'])
-    {{ output('↪︎', 'Building assets...', 'green') }}
+    {{ output('↪︎', 'Building theme assets...', 'green') }}
     cd {{ $theme }}
     trash ./dist
     yarn &> /dev/null
