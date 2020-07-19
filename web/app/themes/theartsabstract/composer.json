@@ -32,7 +32,7 @@
     }
   },
   "require": {
-    "php": ">=7.1",
+    "php": ">=7.3",
     "composer/installers": "~1.0",
     "illuminate/support": "5.6.*",
     "roots/sage-lib": "~9.0.9",
@@ -40,11 +40,9 @@
     "soberwp/intervention": "^1.2"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^2.8.0",
     "roots/sage-installer": "~1.6"
   },
   "scripts": {
-    "test": ["phpcs"],
     "post-create-project-cmd": [
       "Roots\\Sage\\Installer\\ComposerScript::postCreateProject"
     ]
