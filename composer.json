@@ -11,8 +11,7 @@
     "require": {
         "php": ">=7.3",
         "composer/installers": "^1.8",
-        "laravel/envoy": "^2.2",
-        "oscarotero/env": "^2.0",
+        "oscarotero/env": "^1.0",
         "roots/soil": "^3.8",
         "roots/bedrock-autoloader": "^1.0",
         "roots/wordpress": "5.4.1",
