@@ -5,7 +5,7 @@
         {
             "type": "composer",
             "url": "https://wpackagist.org",
-            "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+            "only": ["wpackagist-plugin/*"]
         }
     ],
     "require": {
@@ -20,8 +20,7 @@
         "vlucas/phpdotenv": "^4.1.5",
         "wpackagist-plugin/8tracks-shortcode": "^1.35",
         "wpackagist-plugin/advanced-custom-fields": "^5.8",
-        "wpackagist-plugin/co-authors-plus": "^3.4",
-        "wpackagist-plugin/wps-hide-login": "1.5.2.2"
+        "wpackagist-plugin/co-authors-plus": "^3.4"
     },
     "scripts": {},
     "config": {
@@ -33,7 +32,7 @@
     "prefer-stable": true,
     "extra": {
         "installer-paths": {
-            "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/advanced-custom-fields", "wpackagist-plugin/redis-cache", "wpackagist-plugin/wps-hide-login", "roots/soil"],
+            "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/advanced-custom-fields", "roots/soil"],
             "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
             "web/app/themes/{$name}/": ["type:wordpress-theme"]
         },
