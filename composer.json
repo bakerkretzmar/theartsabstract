@@ -18,7 +18,6 @@
         "roots/wp-config": "1.0.0",
         "roots/wp-password-bcrypt": "1.0.0",
         "vlucas/phpdotenv": "^4.1.5",
-        "wpackagist-plugin/8tracks-shortcode": "^1.35",
         "wpackagist-plugin/advanced-custom-fields": "^5.8",
         "wpackagist-plugin/co-authors-plus": "^3.4"
     },
