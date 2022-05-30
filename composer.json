@@ -5,30 +5,23 @@
         {
             "type": "composer",
             "url": "https://wpackagist.org",
-            "only": ["wpackagist-plugin/*"]
+            "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
         }
     ],
     "require": {
-        "php": ">=7.3",
-        "composer/installers": "^1.8",
-        "oscarotero/env": "^1.0",
-        "roots/soil": "^3.8",
+        "php": "~8.1.0",
+        "composer/installers": "^2.1",
+        "oscarotero/env": "^2.1",
         "roots/bedrock-autoloader": "^1.0",
+        "roots/bedrock-disallow-indexing": "^2.0",
+        "roots/soil": "^4.0",
         "roots/wordpress": "5.4.1",
         "roots/wp-config": "1.0.0",
-        "roots/wp-password-bcrypt": "1.0.0",
-        "vlucas/phpdotenv": "^4.1.5",
+        "roots/wp-password-bcrypt": "1.1.0",
+        "vlucas/phpdotenv": "^5.4",
         "wpackagist-plugin/advanced-custom-fields": "^5.8",
         "wpackagist-plugin/co-authors-plus": "^3.4"
     },
-    "scripts": {},
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "extra": {
         "installer-paths": {
             "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/advanced-custom-fields", "roots/soil"],
@@ -36,5 +29,15 @@
             "web/app/themes/{$name}/": ["type:wordpress-theme"]
         },
         "wordpress-install-dir": "web/wp"
-    }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "roots/wordpress-core-installer": true,
+            "composer/installers": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
