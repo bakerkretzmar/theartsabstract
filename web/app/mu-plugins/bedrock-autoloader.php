@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name:  Bedrock Autoloader
  * Plugin URI:   https://github.com/roots/bedrock-autoloader
@@ -13,5 +12,5 @@
 namespace Roots\Bedrock;
 
 if (is_blog_installed() && class_exists(Autoloader::class)) {
-    new Autoloader;
+    new Autoloader();
 }
