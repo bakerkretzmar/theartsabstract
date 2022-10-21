@@ -20,16 +20,14 @@
         "roots/wp-password-bcrypt": "1.1.0",
         "vlucas/phpdotenv": "^5.4",
         "wpackagist-plugin/advanced-custom-fields": "^5.8",
-        "wpackagist-plugin/co-authors-plus": "^3.4",
-        "wpackagist-plugin/wps-hide-login": "^1.9"
+        "wpackagist-plugin/co-authors-plus": "^3.4"
     },
     "extra": {
         "installer-paths": {
             "web/app/mu-plugins/{$name}/": [
                 "type:wordpress-muplugin",
                 "roots/soil",
-                "wpackagist-plugin/advanced-custom-fields",
-                "wpackagist-plugin/wps-hide-login"
+                "wpackagist-plugin/advanced-custom-fields"
             ],
             "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
             "web/app/themes/{$name}/": ["type:wordpress-theme"]

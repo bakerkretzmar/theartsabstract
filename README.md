@@ -1,5 +1,17 @@
-# [Bedrock](https://roots.io/bedrock/)
+#### Setup
 
-## Documentation
+Site root must be `<project-dir>/web`.
 
-Bedrock documentation is available at [https://roots.io/bedrock/docs/](https://roots.io/bedrock/docs/).
+Make sure the Nginx config includes:
+
+```conf
+# Prevent PHP scripts from being executed inside the uploads folder.
+location ~* /app/uploads/.*.php$ {
+  deny all;
+}
+```
+
+See:
+
+- https://docs.roots.io/bedrock
+- https://docs.roots.io/bedrock/master/server-configuration/#nginx-configuration-for-bedrock
