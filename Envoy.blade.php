@@ -2,51 +2,45 @@
 
 @setup
     $repository = 'git@github.com:bakerkretzmar/theartsabstract.git';
-    $branch = 'master';
+    $health = 'https://theartsabstract.ca';
 
     $base = '/home/forge/theartsabstract.ca';
-    $theme = $base . '/web/app/themes/theartsabstract';
+    $theme = "{$base}/web/app/themes/theartsabstract";
 
-    function output($before, $message, $colour) {
-        $c = ['green' => '32', 'magenta' => '35', 'cyan' => '36'][$colour];
-        return "echo '" . $before . " \033[" . $c . "m" . $message . "\033[0m';";
+    function write(string $message, string $colour = 'gray') {
+        return "echo \"\033[" . ['red' => '31', 'green' => '32', 'gray' => '90'][$colour] . "m" . $message . "\033[0m\"";
     }
 @endsetup
 
 @story('deploy')
-    start
     git
-    composer-wp
-    composer-theme
+    wp
+    theme
     assets
     fpm
-    finish
+    health
 @endstory
 
-@task('start', ['on' => 'production'])
-    {{ output('🛫', "Deploying '$branch' branch to production...", 'cyan') }}
-@endtask
-
 @task('git', ['on' => 'production'])
-    {{ output('↪︎', 'Updating repository...', 'green') }}
+    {{ write('Pulling latest code') }}
     cd {{ $base }}
     git pull
 @endtask
 
-@task('composer-wp', ['on' => 'production'])
-    {{ output('↪︎', 'Installing Bedrock/WordPress dependencies...', 'green') }}
+@task('wp', ['on' => 'production'])
+    {{ write('Installing Bedrock/WordPress Composer dependencies') }}
     cd {{ $base }}
-    composer install -n -q -o --prefer-dist --no-dev
+    composer install --no-interaction --quiet --no-dev
 @endtask
 
-@task('composer-theme', ['on' => 'production'])
-    {{ output('↪︎', 'Installing theme dependencies...', 'green') }}
+@task('theme', ['on' => 'production'])
+    {{ write('Installing theme Composer dependencies') }}
     cd {{ $theme }}
     composer install -n -q -o --prefer-dist --no-dev
 @endtask
 
 @task('assets', ['on' => 'production'])
-    {{ output('↪︎', 'Building theme assets...', 'green') }}
+    {{ write('Building theme assets') }}
     cd {{ $theme }}
     trash ./dist
     yarn &> /dev/null
@@ -54,11 +48,19 @@
 @endtask
 
 @task('fpm', ['on' => 'production'])
-    {{ output('↪︎', 'Reloading php-fpm...', 'green') }}
-    sudo service php7.3-fpm reload
+    {{ write('Reloading PHP-FPM') }}
+    ( flock -w 10 9 || exit 1; sudo -S service php8.0-fpm reload ) 9>/tmp/fpmlock
 @endtask
 
-@task('finish', ['on' => 'local'])
-    {{ output('🚀', 'Deploy successful!', 'magenta') }}
-    afplay /System/Library/Sounds/Submarine.aiff
+@task('health', ['on' => 'local'])
+    @if ($health)
+        {{ write('Performing health check') }}
+        if [ "$(curl --silent --output /dev/null --write-out "%{http_code}\n" {{ $health }})" = "200" ]; then
+            {{ write("Health check OK for {$health}", 'green') }}
+        else
+            {{ write("Health check FAILED for {$health}", 'red') }}
+        fi
+    @else
+        {{ write('No health check set up', 'red') }}
+    @endif
 @endtask
