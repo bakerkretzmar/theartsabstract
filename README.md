@@ -4,7 +4,7 @@ Site root must be `<project-dir>/web`.
 
 Make sure the Nginx config includes:
 
-```conf
+```nginx
 # Prevent PHP scripts from being executed inside the uploads folder.
 location ~* /app/uploads/.*.php$ {
   deny all;
