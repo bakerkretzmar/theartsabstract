@@ -9,6 +9,11 @@ Make sure the Nginx config includes:
 location ~* /app/uploads/.*.php$ {
   deny all;
 }
+
+# Prevent public access of Blade templates
+location ~* \.(blade\.php)$ {
+    deny all;
+}
 ```
 
 See:
