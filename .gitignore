@@ -1,6 +1,5 @@
 /vendor
 /web/app/cache/*
-/web/app/mu-plugins/*/
 /web/app/upgrade
 /web/wp
 /web/.htaccess

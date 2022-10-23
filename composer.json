@@ -20,6 +20,7 @@
         "roots/wordpress": "5.4.1",
         "roots/wp-config": "1.0.0",
         "roots/wp-password-bcrypt": "1.1.0",
+        "soberwp/intervention": "dev-main",
         "vlucas/phpdotenv": "^5.4",
         "wpackagist-plugin/advanced-custom-fields": "^5.8",
         "wpackagist-plugin/co-authors-plus": "^3.4"
@@ -29,7 +30,9 @@
             "web/app/mu-plugins/{$name}/": [
                 "type:wordpress-muplugin",
                 "roots/soil",
-                "wpackagist-plugin/advanced-custom-fields"
+                "soberwp/intervention",
+                "wpackagist-plugin/advanced-custom-fields",
+                "wpackagist-plugin/co-authors-plus"
             ],
             "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
             "web/app/themes/{$name}/": ["type:wordpress-theme"]

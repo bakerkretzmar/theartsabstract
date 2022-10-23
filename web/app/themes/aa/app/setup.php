@@ -16,6 +16,13 @@ add_action('wp_enqueue_scripts', function () {
 }, 100);
 
 /**
+ * Register the theme assets.
+ */
+add_action('admin_enqueue_scripts', function () {
+    bundle('admin')->enqueue();
+}, 100);
+
+/**
  * Register the theme assets with the block editor.
  */
 add_action('enqueue_block_editor_assets', function () {
@@ -33,9 +40,9 @@ add_action('after_setup_theme', function () {
      */
     add_theme_support('soil', [
         'clean-up',
+        'disable-rest-api',
         'nav-walker',
         'nice-search',
-        'relative-urls',
     ]);
 
     /**
@@ -121,10 +128,5 @@ add_action('widgets_init', function () {
     register_sidebar([
         'name' => __('Primary', 'sage'),
         'id' => 'sidebar-primary',
-    ] + $config);
-
-    register_sidebar([
-        'name' => __('Footer', 'sage'),
-        'id' => 'sidebar-footer',
     ] + $config);
 });
