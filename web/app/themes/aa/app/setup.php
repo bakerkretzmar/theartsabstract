@@ -10,8 +10,6 @@ use function Roots\bundle;
 
 /**
  * Register the theme assets.
- *
- * @return void
  */
 add_action('wp_enqueue_scripts', function () {
     bundle('app')->enqueue();
@@ -19,8 +17,6 @@ add_action('wp_enqueue_scripts', function () {
 
 /**
  * Register the theme assets with the block editor.
- *
- * @return void
  */
 add_action('enqueue_block_editor_assets', function () {
     bundle('editor')->enqueue();
@@ -28,8 +24,6 @@ add_action('enqueue_block_editor_assets', function () {
 
 /**
  * Register the initial theme setup.
- *
- * @return void
  */
 add_action('after_setup_theme', function () {
     /**

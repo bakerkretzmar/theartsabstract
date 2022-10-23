@@ -1,5 +1,3 @@
-// @ts-check
-
 /**
  * Build configuration
  *
@@ -12,45 +10,38 @@ export default async (app) => {
      * Application entrypoints
      */
     .entry({
-      app: ["@scripts/app", "@styles/app"],
-      editor: ["@scripts/editor", "@styles/editor"],
+            app: ['@scripts/app', '@styles/app'],
+            editor: ['@scripts/editor', '@styles/editor'],
     })
-
-    /**
-     * Directory contents to be included in the compilation
-     */
-    .assets(["images"])
-
-    /**
-     * Matched files trigger a page reload when modified
-     */
-    .watch(["resources/views/**/*", "app/**/*"])
-
-    /**
-     * Proxy origin (`WP_HOME`)
-     */
-    .proxy("http://example.test")
-
-    /**
-     * Development origin
-     */
-    .serve("http://0.0.0.0:3000")
-
-    /**
-     * URI of the `public` directory
-     */
-    .setPublicPath("/app/themes/sage/public/")
-
-    /**
-     * Generate WordPress `theme.json`
-     *
-     * @note This overwrites `theme.json` on every build.
-     */
-    .wpjson
-      .settings({
-        color: {
-          custom: false,
-          customGradient: false,
+        /**
+         * Directory contents to be included in the compilation
+         */
+        .assets(['images'])
+        /**
+         * Matched files trigger a page reload when modified
+         */
+        .watch(['resources/views/**/*', 'app/**/*'])
+        /**
+         * Proxy origin (`WP_HOME`)
+         */
+        .proxy('http://theartsabstract.test')
+        /**
+         * Development origin
+         */
+        .serve('http://0.0.0.0:3000')
+        /**
+         * URI of the `public` directory
+         */
+        .setPublicPath('/app/themes/sage/public/')
+        /**
+         * Generate WordPress `theme.json`
+         *
+         * @note This overwrites `theme.json` on every build.
+         */
+        .wpjson.settings({
+            color: {
+                custom: false,
+                customGradient: false,
           defaultPalette: false,
           defaultGradients: false,
         },
@@ -69,8 +60,8 @@ export default async (app) => {
           customFontSize: false,
         },
       })
-      .useTailwindColors()
-      .useTailwindFontFamily()
-      .useTailwindFontSize()
-      .enable()
+        .useTailwindColors()
+        .useTailwindFontFamily()
+        .useTailwindFontSize()
+        .enable();
 };
