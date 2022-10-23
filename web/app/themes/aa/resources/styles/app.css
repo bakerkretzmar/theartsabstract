@@ -1,3 +1,157 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer base {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply leading-tight;
+    }
+}
+
+@layer components {
+    .content {
+        @apply space-y-6 max-w-3xl font-serif text-xl leading-relaxed;
+        & a {
+            @apply text-red-600 border-b-2 border-transparent hover:border-red-600 transition-colors;
+        }
+        & ul {
+            @apply list-disc ml-8 space-y-2;
+            /* & > li + li {
+                @apply .mt-2;
+            } */
+        }
+        & blockquote {
+            @apply relative py-2 mx-4;
+            @screen md {
+                @apply ml-32 py-6;
+            }
+            @screen lg {
+                @apply ml-20 -mr-20 py-12;
+            }
+            quotes: '“', '”';
+            &::before {
+                content: '“';
+                @apply hidden absolute text-gray-300;
+                @screen md {
+                    @apply block;
+                    font-size: 300px;
+                    top: -70px;
+                    left: -130px;
+                }
+                @screen lg {
+                    font-size: 500px;
+                    top: -110px;
+                    left: -230px;
+                }
+            }
+            & p {
+                @apply text-2xl leading-relaxed italic mb-2;
+                @screen md {
+                    @apply text-3xl mb-4;
+                }
+                @screen lg {
+                    @apply text-4xl mb-6;
+                }
+            }
+            & cite {
+                @apply text-xl text-gray-700 not-italic;
+                @screen lg {
+                    @apply text-2xl;
+                }
+            }
+        }
+        & figure {
+            @apply relative;
+            & figcaption {
+                @apply absolute right-0 bottom-0 px-2 py-1 m-0 text-sm text-white bg-black/75;
+            }
+        }
+        & hr {
+            @apply mx-auto h-0.5 w-1/3 my-12 bg-gray-400 border-none rounded-full;
+        }
+    }
+    a.author,
+    .categories-tags > a,
+    .pagination-links a {
+        @apply text-red-600 border-b-2 border-transparent hover:border-red-600 transition-colors;
+    }
+    .posts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+        @screen md {
+            grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+        }
+    }
+}
+
+@layer utilities {
+    .link {
+        @apply text-red-600 border-b-2 border-transparent hover:border-red-600 transition-colors;
+    }
+}
+
+/* .transition-200 {
+    transition: all 200ms ease;
+}
+
+.h-fill {
+    height: calc(100vh - 44px);
+} */
+
+.wp-block-image {
+    @apply w-full my-12;
+
+    &:first-child {
+        @apply mt-0;
+    }
+
+    & img {
+        @apply w-full;
+    }
+
+    & .alignnone,
+    & .aligncenter,
+    & .alignleft,
+    & .alignright {
+        @apply float-none block mx-auto;
+    }
+}
+
+.wp-block-embed {
+    @apply w-full my-12;
+
+    &.wp-block-embed-facebook {
+        width: min-content;
+        @apply mx-auto;
+    }
+
+    &.wp-embed-aspect-16-9 {
+        @apply aspect-video;
+        & iframe {
+            /* @apply aspect-ratio; */
+        }
+    }
+
+    & iframe {
+        @apply w-full;
+    }
+}
+
+.sr-only,
+.screen-reader-text {
+    @apply absolute w-px h-px p-0 overflow-hidden whitespace-nowrap border-none;
+    clip: rect(0, 0, 0, 0);
+}
+
+.sr-only-focusable:active,
+.screen-reader-text:active,
+.sr-only-focusable:focus,
+.screen-reader-text:focus {
+    @apply static w-auto h-auto overflow-visible whitespace-normal;
+    clip: auto;
+}

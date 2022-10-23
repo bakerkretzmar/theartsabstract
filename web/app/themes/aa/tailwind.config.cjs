@@ -8,6 +8,13 @@ module.exports = {
                 sans: ['"Montserrat"', ...defaults.fontFamily.sans],
                 serif: ['"Vollkorn"', ...defaults.fontFamily.serif],
             },
+            aspectRatio: {
+                golden: '34 / 21',
+            },
+        },
+        container: {
+            center: true,
+            padding: '1rem',
         },
     },
 };

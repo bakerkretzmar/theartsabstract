@@ -1,13 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-  @include('partials.page-header')
-
-  @if (! have_posts())
-    <x-alert type="warning">
-      {!! __('Sorry, but the page you are trying to view does not exist.', 'sage') !!}
-    </x-alert>
-
-    {!! get_search_form(false) !!}
-  @endif
+    @if (! have_posts())
+        <article class="container py-8 space-y-12">
+            <h1 class="text-4xl lg:text-5xl text-center font-bold uppercase">
+                {{ __('Nope', 'theartsabstract') }}
+            </h1>
+            <img src="@asset('images/404.gif')" class="w-3/5 mx-auto" />
+            <p class="text-center">
+                {{ __('There’s nothing here for you but', 'theartsabstract') }} <a href="https://www.facebook.com/media/set/?set=a.537190639797340.1073741838.107265476123194&type=1&l=92124e3858" class="link">{{ __('stale memories', 'theartsabstract') }}</a>.
+            </p>
+        </article>
+    @endif
 @endsection

@@ -33,7 +33,7 @@ export default async (app) => {
         /**
          * URI of the `public` directory
          */
-        .setPublicPath('/app/themes/sage/public/')
+        .setPublicPath('/app/themes/theartsabstract/public/')
         /**
          * Generate WordPress `theme.json`
          *

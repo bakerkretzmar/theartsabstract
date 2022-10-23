@@ -5,7 +5,7 @@
 
     @if (! have_posts())
         <p class="text-2xl py-12 mx-auto text-center">
-            {{ __('Search harder!', 'theartsabstract') }}
+            {{ __('Bummer, there’s nothing here.', 'theartsabstract') }}
         </p>
         @include('forms.search')
     @endif

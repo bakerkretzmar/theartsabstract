@@ -1,21 +1,21 @@
-import {domReady} from '@roots/sage/client';
-import {registerBlockStyle, unregisterBlockStyle} from '@wordpress/blocks';
+import { domReady } from '@roots/sage/client';
+import { registerBlockStyle, unregisterBlockStyle } from '@wordpress/blocks';
 
 /**
  * editor.main
  */
 const main = (err) => {
-  if (err) {
-    // handle hmr errors
-    console.error(err);
-  }
+    if (err) {
+        // handle hmr errors
+        console.error(err);
+    }
 
-  unregisterBlockStyle('core/button', 'outline');
+    unregisterBlockStyle('core/button', 'outline');
 
-  registerBlockStyle('core/button', {
-    name: 'outline',
-    label: 'Outline',
-  });
+    registerBlockStyle('core/button', {
+        name: 'outline',
+        label: 'Outline',
+    });
 };
 
 /**
