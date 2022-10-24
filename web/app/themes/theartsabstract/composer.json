@@ -7,7 +7,7 @@
         }
     },
     "require": {
-        "php": "^7.4|^8.0"
+        "php": "~8.0.0"
     },
     "suggest": {
         "log1x/sage-directives": "A collection of useful Blade directives for WordPress and Sage (^1.0).",

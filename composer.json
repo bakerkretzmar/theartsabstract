@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "~8.0.0",
         "composer/installers": "^2.2",
         "laravel/envoy": "^2.8",
         "oscarotero/env": "^2.1",
