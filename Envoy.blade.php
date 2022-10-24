@@ -1,4 +1,4 @@
-@servers(['local' => '127.0.0.1', 'production' => 'bubbling-darkness'])
+@servers(['local' => '127.0.0.1', 'production' => 'mythic-hill'])
 
 @setup
     $repository = 'git@github.com:bakerkretzmar/theartsabstract.git';
