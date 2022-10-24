@@ -2,7 +2,7 @@
 
 return [
     'application' => [
-        'theme' => 'aa',
+        'theme' => 'theartsabstract',
         'general' => [
             'site-title' => 'The Arts Abstract',
             'tagline' => 'An arts publication for students at the University of King’s College.',
