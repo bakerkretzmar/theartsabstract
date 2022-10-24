@@ -2,16 +2,16 @@
 
 Site root must be `<project-dir>/web`.
 
-Make sure the Nginx config includes:
+Make sure the Nginx config includes the following **before** the main `location ~ \.php$` block:
 
 ```nginx
 # Bedrock/Sage
 # Prevent PHP scripts from being executed inside the uploads folder
 location ~* /app/uploads/.*\.php$ {
-  deny all;
+    deny all;
 }
-# Prevent public access of Blade templates
-location ~* \.(blade\.php)$ {
+# Prevent public access to Blade templates
+location ~* \.blade\.php$ {
     deny all;
 }
 ```
