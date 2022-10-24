@@ -36,15 +36,14 @@
 @task('theme', ['on' => 'production'])
     {{ write('Installing theme Composer dependencies') }}
     cd {{ $theme }}
-    composer install -n -q -o --prefer-dist --no-dev
+    composer install --no-interaction --quiet --no-dev
 @endtask
 
 @task('assets', ['on' => 'production'])
     {{ write('Building theme assets') }}
     cd {{ $theme }}
-    trash ./dist
-    yarn &> /dev/null
-    yarn prod &> /dev/null
+    npm ci
+    npm run build
 @endtask
 
 @task('fpm', ['on' => 'production'])
