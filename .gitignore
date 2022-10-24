@@ -4,6 +4,7 @@
 /web/wp
 /web/.htaccess
 *.log
+*.sql
 .env*
 !.env.example
 wp-cli.local.yml
