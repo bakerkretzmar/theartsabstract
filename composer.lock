@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5fdb966b0336b3071daf3635f4b8b5f2",
+    "content-hash": "7c09a3b1d7b995118242a3fd00f2fa44",
     "packages": [
         {
             "name": "brick/math",
@@ -9378,7 +9378,7 @@
             "time": "2026-04-10T07:32:03+00:00"
         },
         {
-            "name": "wpackagist-plugin/advanced-custom-fields",
+            "name": "wp-plugin/advanced-custom-fields",
             "version": "6.8.10",
             "source": {
                 "type": "svn",
@@ -9390,13 +9390,26 @@
                 "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.6.8.10.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/advanced-custom-fields/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "WP Engine"
+                }
+            ],
+            "description": "ACF helps customize WordPress with powerful, professional and intuitive fields. Proudly powering over 2 million sites, WordPress developers love ACF.",
+            "homepage": "https://www.advancedcustomfields.com",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/advanced-custom-fields/#developers",
+                "issues": "https://wordpress.org/support/plugin/advanced-custom-fields",
+                "source": "https://plugins.svn.wordpress.org/advanced-custom-fields"
+            },
+            "time": "2026-09-10T17:31:40+00:00"
         },
         {
-            "name": "wpackagist-plugin/co-authors-plus",
+            "name": "wp-plugin/co-authors-plus",
             "version": "3.7.0",
             "source": {
                 "type": "svn",
@@ -9408,10 +9421,23 @@
                 "url": "https://downloads.wordpress.org/plugin/co-authors-plus.3.7.0.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/co-authors-plus/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Automattic"
+                }
+            ],
+            "description": "Assign multiple bylines to posts, pages, and custom post types with a search-as-you-type input box.",
+            "homepage": "https://wordpress.org/plugins/co-authors-plus/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/co-authors-plus/#developers",
+                "issues": "https://wordpress.org/support/plugin/co-authors-plus",
+                "source": "https://plugins.svn.wordpress.org/co-authors-plus"
+            },
+            "time": "2026-06-26T12:35:52+00:00"
         }
     ],
     "packages-dev": [],

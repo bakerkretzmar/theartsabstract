@@ -2,9 +2,7 @@
 /web/app/cache/*
 /web/app/upgrade
 /web/wp
-/web/.htaccess
 *.log
 *.sql
-.env*
-!.env.example
+.env
 wp-cli.local.yml
