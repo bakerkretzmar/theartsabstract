@@ -11,7 +11,7 @@
             @if (has_nav_menu('primary_navigation'))
                 {!! wp_nav_menu([
                     'theme_location' => 'primary_navigation',
-                    'menu_class' => 'flex flex-col items-end gap-3 text-right uppercase [&>*]:text-white hover:[&>*]:text-green-600 [&>*]:transition-colors',
+                    'menu_class' => 'flex flex-col items-end gap-3 text-right uppercase [&>*]:text-white [&>*]:hover:text-green-600 [&>*]:transition-colors',
                     'echo' => false,
                 ]) !!}
             @endif
@@ -25,7 +25,7 @@
         @if (has_nav_menu('primary_navigation'))
             {!! wp_nav_menu([
                 'theme_location' => 'primary_navigation',
-                'menu_class' => 'flex gap-3 uppercase [&>*]:text-white hover:[&>*]:text-green-600 [&>*]:transition-colors',
+                'menu_class' => 'flex gap-3 uppercase [&>*]:text-white [&>*]:hover:text-green-600 [&>*]:transition-colors',
                 'echo' => false,
             ]) !!}
         @endif
