@@ -12,16 +12,6 @@ class App extends Composer
     protected static $views = ['*'];
 
     /**
-     * Data to be passed to view before rendering.
-     */
-    public function with(): array
-    {
-        return [
-            'siteName' => $this->siteName(),
-        ];
-    }
-
-    /**
      * Returns the site name.
      */
     public function siteName(): string

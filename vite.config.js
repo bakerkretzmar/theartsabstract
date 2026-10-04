@@ -1,4 +1,4 @@
-import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
+import { wordpressThemeJson } from '@roots/vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
 import laravel from 'laravel-vite-plugin';
 import { bunny } from 'laravel-vite-plugin/fonts';
@@ -9,7 +9,7 @@ export default defineConfig({
     plugins: [
         tailwindcss(),
         laravel({
-            input: ['resources/css/app.css', 'resources/css/admin.css', 'resources/js/editor.js'],
+            input: ['resources/css/app.css', 'resources/css/admin.css'],
             refresh: true,
             assets: ['resources/images/**'],
             fonts: [
@@ -29,12 +29,6 @@ export default defineConfig({
                 }),
             ],
         }),
-        wordpressPlugin(),
-        wordpressThemeJson({
-            disableTailwindColors: false,
-            disableTailwindFonts: false,
-            disableTailwindFontSizes: false,
-            disableTailwindBorderRadius: false,
-        }),
+        wordpressThemeJson(),
     ],
 });

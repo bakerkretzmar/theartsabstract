@@ -9,35 +9,9 @@ class AssetsServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        /** Register the theme assets. */
-        add_action('wp_enqueue_scripts', function (): void {
-            remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
-        }, 100);
-
         /** Style the admin interface separately from the editable block content. */
         add_action('admin_enqueue_scripts', function (): void {
             wp_enqueue_style('theartsabstract/admin', Vite::asset('resources/css/admin.css'), ver: null);
-        });
-
-        /** Inject scripts into the block editor. */
-        add_filter('admin_head', function () {
-            if (! get_current_screen()?->is_block_editor()) {
-                return;
-            }
-
-            $dependencies = json_decode(Vite::content('editor.deps.json'));
-
-            foreach ($dependencies as $dependency) {
-                if (wp_script_is($dependency)) {
-                    continue;
-                }
-
-                wp_enqueue_script($dependency);
-            }
-
-            echo Vite::withEntryPoints([
-                'resources/js/editor.js',
-            ])->toHtml();
         });
 
         /** Use the generated theme.json file. */

@@ -11,8 +11,6 @@ class ThemeServiceProvider extends SageServiceProvider
     {
         parent::boot();
 
-        // Blade::withoutDoubleEncoding();
-
         /** Register theme support and navigation menus from the theme config. */
         add_action('after_setup_theme', function (): void {
             Collection::make(config('theme.support'))->map(fn ($params, $feature) => (
@@ -24,10 +22,6 @@ class ThemeServiceProvider extends SageServiceProvider
             ))->each(fn ($params) => remove_theme_support(...$params));
 
             register_nav_menus(config('theme.menus'));
-
-            Collection::make(config('theme.image_sizes'))->each(
-                fn ($params, $name) => add_image_size($name, ...$params),
-            );
         }, 20, );
 
         /**

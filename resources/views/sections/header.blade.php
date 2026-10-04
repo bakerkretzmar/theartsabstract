@@ -7,7 +7,7 @@
         <button type="button" class="block text-white">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" /></svg>
         </button>
-        <div class="hidden group-focus-within:flex flex-col absolute right-[-1rem] top-[100%] p-4 mt-2 bg-black z-20">
+        <div class="hidden group-focus-within:flex flex-col absolute -right-4 top-full p-4 mt-2 bg-black z-20">
             @if (has_nav_menu('primary_navigation'))
                 {!! wp_nav_menu([
                     'theme_location' => 'primary_navigation',

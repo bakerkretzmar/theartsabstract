@@ -29,7 +29,7 @@ return [
          * Sidebar instances
          */
         'register' => [
-            ['name' => __('Primary', 'theartsabstract'), 'id' => 'sidebar-primary']
+            ['name' => __('Primary', 'theartsabstract'), 'id' => 'sidebar-primary'],
         ],
 
         /**
@@ -39,7 +39,7 @@ return [
             'before_widget' => '<section class="widget %1$s %2$s">',
             'after_widget' => '</section>',
             'before_title' => '<h3>',
-            'after_title' => '</h3>'
+            'after_title' => '</h3>',
         ],
     ],
 
