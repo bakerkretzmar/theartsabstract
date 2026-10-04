@@ -1,0 +1,16 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "concat_space": {
+            "spacing": "one"
+        },
+        "no_extra_blank_lines": {
+            "tokens": ["extra", "throw", "use", "use_trait"]
+        },
+        "single_line_empty_body": true,
+        "trailing_comma_in_multiline": {
+            "after_heredoc": true,
+            "elements": ["arguments", "array_destructuring", "arrays", "match", "parameters"]
+        }
+    }
+}

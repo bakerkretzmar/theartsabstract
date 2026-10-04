@@ -1,0 +1,29 @@
+{
+    "_hash": "8ad09d69f7a0c1ad54a6faf3b4dcc5a50280314be1efccec49e7648b2a9a0ef8",
+    "patches": {
+        "wp-plugin/intervention": [
+            {
+                "package": "wp-plugin/intervention",
+                "description": "Declare properties and explicit nullable callbacks for PHP 8.5",
+                "url": "patches/intervention-php85.patch",
+                "sha256": "6a9413f7c281ffab8451b29df07343fe86553c2b857b80895a36d6d0a6a77bd4",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "wp-plugin/co-authors-plus": [
+            {
+                "package": "wp-plugin/co-authors-plus",
+                "description": "Resolve block editor assets relative to the MU plugin",
+                "url": "patches/co-authors-plus-mu-plugin-assets.patch",
+                "sha256": "cc256483f7b364bbbf625884dfd1f21a020e0781365c4fd54912f252227c75db",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ]
+    }
+}
