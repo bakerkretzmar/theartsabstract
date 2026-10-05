@@ -29,7 +29,6 @@
         "roots/wp-config": "^1.0",
         "vlucas/phpdotenv": "^5.7",
         "wp-cli/wp-cli-bundle": "^2.11",
-        "wp-plugin/advanced-custom-fields": "^6.8.10",
         "wp-plugin/co-authors-plus": "^4.1.1",
         "wp-plugin/intervention": "^2.0"
     },
@@ -62,7 +61,6 @@
         "installer-paths": {
             "public/content/mu-plugins/{$name}/": [
                 "type:wordpress-muplugin",
-                "wp-plugin/advanced-custom-fields",
                 "wp-plugin/co-authors-plus",
                 "wp-plugin/intervention"
             ],

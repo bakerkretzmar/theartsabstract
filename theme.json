@@ -3,6 +3,10 @@
     "$schema": "https://schemas.wp.org/trunk/theme.json",
     "version": 3,
     "settings": {
+        "layout": {
+            "contentSize": "48rem",
+            "wideSize": "72rem"
+        },
         "background": {
             "backgroundImage": true
         },
@@ -44,6 +48,13 @@
                     "fontFamily": "var(--font-vollkorn)"
                 }
             ]
+        }
+    },
+    "styles": {
+        "typography": {
+            "fontFamily": "var(--font-montserrat, system-ui), sans-serif",
+            "fontSize": "1rem",
+            "lineHeight": "1.6"
         }
     }
 }

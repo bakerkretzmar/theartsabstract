@@ -87,6 +87,9 @@
 .wp-block-image img {
     @apply w-full;
 }
+.wp-block-image figcaption {
+    margin-block: 0;
+}
 .wp-block-image .alignnone,
 .wp-block-image .aligncenter,
 .wp-block-image .alignleft,
