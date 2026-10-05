@@ -1,5 +1,5 @@
 {
-    "_hash": "8ad09d69f7a0c1ad54a6faf3b4dcc5a50280314be1efccec49e7648b2a9a0ef8",
+    "_hash": "f565dd7c1f7651a0973ac1f4dd934a3cc3a72af305bb4d7f8069ff8b294e9239",
     "patches": {
         "wp-plugin/intervention": [
             {
@@ -18,7 +18,7 @@
                 "package": "wp-plugin/co-authors-plus",
                 "description": "Resolve block editor assets relative to the MU plugin",
                 "url": "patches/co-authors-plus-mu-plugin-assets.patch",
-                "sha256": "cc256483f7b364bbbf625884dfd1f21a020e0781365c4fd54912f252227c75db",
+                "sha256": "6cdbab66e1ea542e34355366c88f61b32bbc27e15d2a0e0e0bc7a8c55fcfdad2",
                 "depth": 1,
                 "extra": {
                     "provenance": "root"

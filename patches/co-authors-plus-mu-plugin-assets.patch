@@ -1,11 +1,11 @@
 --- a/php/blocks/class-blocks.php
 +++ b/php/blocks/class-blocks.php
-@@ -125,7 +125,7 @@
+@@ -137,7 +137,7 @@
  
  		wp_enqueue_script(
  			'coauthors-blocks-store',
 -			plugins_url( '/co-authors-plus/build/blocks-store/index.js' ),
 +			plugins_url( 'build/blocks-store/index.js', COAUTHORS_PLUS_FILE ),
  			$asset['dependencies'],
- 			$asset['version']
- 		);
+ 			$asset['version'],
+ 			true
